@@ -1,0 +1,24 @@
+# user have only access kissancricketleague-backend s3 bucket to do any action. 
+{
+    "Version": "2012-10-17",
+    "Statement": [
+        {
+            "Sid": "AllowS3ConsoleBucketList",
+            "Effect": "Allow",
+            "Action": [
+                "s3:ListAllMyBuckets",
+                "s3:GetBucketLocation"
+            ],
+            "Resource": "arn:aws:s3:::*"
+        },
+        {
+            "Sid": "AllowEcubixBucket",
+            "Effect": "Allow",
+            "Action": "s3:*",
+            "Resource": [
+                "arn:aws:s3:::kissancricketleague-backend",
+                "arn:aws:s3:::kissancricketleague-backend/*"
+            ]
+        }
+    ]
+}
